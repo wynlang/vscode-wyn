@@ -1,0 +1,113 @@
+{
+  "name": "Wyn",
+  "scopeName": "source.wyn",
+  "patterns": [
+    { "include": "#comments" },
+    { "include": "#keywords" },
+    { "include": "#strings" },
+    { "include": "#numbers" },
+    { "include": "#functions" },
+    { "include": "#types" }
+  ],
+  "repository": {
+    "comments": {
+      "patterns": [
+        {
+          "name": "comment.line.double-slash.wyn",
+          "match": "//.*$"
+        },
+        {
+          "name": "comment.block.wyn",
+          "begin": "/\\*",
+          "end": "\\*/"
+        }
+      ]
+    },
+    "keywords": {
+      "patterns": [
+        {
+          "name": "keyword.control.wyn",
+          "match": "\\b(if|else|while|for|return|break|continue|match|case)\\b"
+        },
+        {
+          "name": "keyword.declaration.wyn",
+          "match": "\\b(fn|var|const|struct|enum|impl|trait|type|pub|import|module)\\b"
+        },
+        {
+          "name": "keyword.other.wyn",
+          "match": "\\b(self|super|root)\\b"
+        },
+        {
+          "name": "constant.language.wyn",
+          "match": "\\b(true|false|None|Some|Ok|Err)\\b"
+        }
+      ]
+    },
+    "strings": {
+      "patterns": [
+        {
+          "name": "string.quoted.double.wyn",
+          "begin": "\"",
+          "end": "\"",
+          "patterns": [
+            {
+              "name": "constant.character.escape.wyn",
+              "match": "\\\\."
+            },
+            {
+              "name": "constant.other.placeholder.wyn",
+              "match": "\\$\\{[^}]+\\}"
+            }
+          ]
+        },
+        {
+          "name": "string.quoted.single.wyn",
+          "begin": "'",
+          "end": "'",
+          "patterns": [
+            {
+              "name": "constant.character.escape.wyn",
+              "match": "\\\\."
+            }
+          ]
+        }
+      ]
+    },
+    "numbers": {
+      "patterns": [
+        {
+          "name": "constant.numeric.wyn",
+          "match": "\\b[0-9][0-9_]*(\\.[0-9][0-9_]*)?([eE][+-]?[0-9]+)?\\b"
+        },
+        {
+          "name": "constant.numeric.hex.wyn",
+          "match": "\\b0[xX][0-9a-fA-F_]+\\b"
+        },
+        {
+          "name": "constant.numeric.binary.wyn",
+          "match": "\\b0[bB][01_]+\\b"
+        }
+      ]
+    },
+    "functions": {
+      "patterns": [
+        {
+          "name": "entity.name.function.wyn",
+          "match": "\\b([a-zA-Z_][a-zA-Z0-9_]*)\\s*(?=\\()"
+        }
+      ]
+    },
+    "types": {
+      "patterns": [
+        {
+          "name": "storage.type.wyn",
+          "match": "\\b(int|float|string|bool|void)\\b"
+        },
+        {
+          "name": "entity.name.type.wyn",
+          "match": "\\b[A-Z][a-zA-Z0-9_]*\\b"
+        }
+      ]
+    }
+  }
+}
