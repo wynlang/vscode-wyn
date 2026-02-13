@@ -1,7 +1,7 @@
 {
   "name": "wyn",
   "displayName": "Wyn Language Support",
-  "description": "Syntax highlighting and language support for Wyn",
+  "description": "Syntax highlighting and LSP support for the Wyn programming language",
   "version": "1.6.0",
   "publisher": "wyn-lang",
   "engines": {
@@ -11,17 +11,26 @@
     "Programming Languages"
   ],
   "contributes": {
-    "languages": [{
-      "id": "wyn",
-      "aliases": ["Wyn", "wyn"],
-      "extensions": [".wyn"],
-      "configuration": "./language-configuration.json"
-    }],
-    "grammars": [{
-      "language": "wyn",
-      "scopeName": "source.wyn",
-      "path": "./syntaxes/wyn.tmLanguage.json"
-    }],
+    "languages": [
+      {
+        "id": "wyn",
+        "aliases": [
+          "Wyn",
+          "wyn"
+        ],
+        "extensions": [
+          ".wyn"
+        ],
+        "configuration": "./language-configuration.json"
+      }
+    ],
+    "grammars": [
+      {
+        "language": "wyn",
+        "scopeName": "source.wyn",
+        "path": "./syntaxes/wyn.tmLanguage.json"
+      }
+    ],
     "configuration": {
       "title": "Wyn",
       "properties": {
@@ -37,5 +46,10 @@
         }
       }
     }
-  }
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/wynlang/vscode-wyn"
+  },
+  "homepage": "https://wynlang.com"
 }

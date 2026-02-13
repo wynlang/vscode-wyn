@@ -1,67 +1,74 @@
-# Wyn Language Support for VS Code
+# Wyn for VS Code
 
-Syntax highlighting and language support for the Wyn programming language.
+Syntax highlighting and language server support for [Wyn](https://wynlang.com).
 
 ## Features
 
-- **Syntax Highlighting** - Full syntax highlighting for Wyn code
-- **Auto-closing** - Automatic closing of brackets, quotes, etc.
-- **Comments** - Line and block comment support
-- **Code Folding** - Fold functions, structs, and blocks
+- Syntax highlighting for all keywords, 27 modules, operators, string interpolation
+- LSP integration via `wyn lsp` — completions, hover, go-to-definition, references, rename, format
+- Auto-closing brackets, quotes, string interpolation `${}`
+- Comment toggling (`Ctrl+/`)
+- Code folding
 
-## Installation
+## Install
 
-### From Source
-
-1. Copy this directory to your VS Code extensions folder:
-   - **macOS/Linux:** `~/.vscode/extensions/`
-   - **Windows:** `%USERPROFILE%\.vscode\extensions\`
-
-2. Restart VS Code
-
-### From VSIX (Future)
+Copy to your extensions directory:
 
 ```bash
-code --install-extension wyn-1.4.0.vsix
+# macOS/Linux
+cp -r vscode-wyn ~/.vscode/extensions/wyn
+
+# Windows
+xcopy /E vscode-wyn %USERPROFILE%\.vscode\extensions\wyn
 ```
 
-## Usage
+Restart VS Code. Open any `.wyn` file.
 
-Open any `.wyn` file and syntax highlighting will be applied automatically.
+## LSP
 
-## Language Server (Optional)
+The extension automatically starts `wyn lsp` when you open a `.wyn` file. Make sure `wyn` is in your PATH:
 
-To enable LSP features:
+```bash
+wyn install    # or add wyn to PATH manually
+```
 
-1. Install Wyn compiler with LSP support
-2. Enable in settings:
-   ```json
-   {
-     "wyn.lsp.enabled": true,
-     "wyn.lsp.path": "/path/to/wyn"
-   }
-   ```
+LSP provides:
+- **Completions** — all keywords, 27 modules with method hints, triggered by `.`
+- **Hover** — type information
+- **Go to Definition** — jump to function/struct definitions
+- **Find References** — find all usages
+- **Rename** — rename symbols across files
+- **Format** — format document
 
-3. Restart VS Code
+## Highlighted
 
-## Supported Features
-
-- ✅ Syntax highlighting
-- ✅ Auto-closing pairs
-- ✅ Comment toggling
-- ✅ Bracket matching
-- ⏳ LSP integration (coming soon)
-- ⏳ Snippets (coming soon)
-- ⏳ Debugging (coming soon)
+| Category | Tokens |
+|----------|--------|
+| Keywords | `fn var const struct enum impl trait type pub import export module` |
+| Flow | `return break continue spawn await if else match while for in` |
+| Modifiers | `mut` |
+| Types | `int float string bool void ResultInt OptionInt` |
+| Modules | `File System Terminal HashMap Math Path DateTime Json Regex Csv Http Net Db Task Gui Audio StringBuilder Crypto Encoding Os Uuid Log Process Test Url` |
+| Constants | `true false None Some Ok Err` |
 
 ## Example
 
 ```wyn
-// Wyn code with syntax highlighting
-fn main() {
-    var message = "Hello, World!";
-    print(message);
-    return 0;
+struct Server {
+    port: int
+    name: string
+
+    fn start(self) -> int {
+        var srv = Http.serve(self.port)
+        println("${self.name} running on ${self.port.to_string()}")
+        return srv
+    }
+}
+
+fn main() -> int {
+    var s = Server{port: 8080, name: "MyApp"}
+    s.start()
+    return 0
 }
 ```
 
@@ -69,8 +76,4 @@ fn main() {
 
 - [Wyn Language](https://github.com/wynlang/wyn)
 - [Documentation](https://github.com/wynlang/wyn/tree/main/docs)
-- [Examples](https://github.com/wynlang/wyn/tree/main/examples)
-
-## License
-
-See LICENSE file in the Wyn repository.
+- [wynlang.com](https://wynlang.com)
