@@ -40,7 +40,7 @@
     },
     "keywords": {
       "patterns": [
-        { "match": "\\b(fn|var|const|struct|enum|impl|trait|type|pub|import|export|module|async)\\b", "name": "keyword.other.wyn" },
+        { "match": "\\b(fn|var|const|struct|enum|impl|trait|type|pub|import|export|module)\\b", "name": "keyword.other.wyn" },
         { "match": "\\b(if|else|match|case)\\b", "name": "keyword.control.conditional.wyn" },
         { "match": "\\b(while|for|in)\\b", "name": "keyword.control.loop.wyn" },
         { "match": "\\b(return|break|continue|spawn|await)\\b", "name": "keyword.control.flow.wyn" },
