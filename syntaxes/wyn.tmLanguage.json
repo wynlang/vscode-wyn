@@ -41,7 +41,7 @@
     "keywords": {
       "patterns": [
         { "match": "\\b(fn|var|const|struct|enum|impl|trait|type|pub|import|export|module)\\b", "name": "keyword.other.wyn" },
-        { "match": "\\b(if|else|match|case)\\b", "name": "keyword.control.conditional.wyn" },
+        { "match": "\\b(if|else|match)\\b", "name": "keyword.control.conditional.wyn" },
         { "match": "\\b(while|for|in)\\b", "name": "keyword.control.loop.wyn" },
         { "match": "\\b(return|break|continue|spawn|await)\\b", "name": "keyword.control.flow.wyn" },
         { "match": "\\b(mut)\\b", "name": "storage.modifier.wyn" },
@@ -55,7 +55,7 @@
       "name": "support.type.wyn"
     },
     "modules": {
-      "match": "\\b(File|System|Terminal|HashMap|HashSet|Math|Path|DateTime|Json|Regex|Url|Test|Task|Db|Http|Net|Gui|Audio|StringBuilder|Crypto|Encoding|Os|Uuid|Log|Process)\\b",
+      "match": "\\b(File|System|Terminal|HashMap|HashSet|Math|Path|DateTime|Json|Regex|Url|Test|Task|Db|Http|Net|Gui|Audio|StringBuilder|Crypto|Encoding|Os|Uuid|Log|Process|Csv)\\b",
       "name": "support.class.wyn"
     },
     "constants": {
