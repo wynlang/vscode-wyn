@@ -71,7 +71,7 @@
     },
     "operators": {
       "patterns": [
-        { "match": "->|=>|\\.\\.", "name": "keyword.operator.wyn" },
+        { "match": "->|=>|\\.\\.||>", "name": "keyword.operator.wyn" },
         { "match": "[+\\-*/%=<>!&|^~?]", "name": "keyword.operator.wyn" }
       ]
     }
