@@ -1,6 +1,6 @@
 {
   "name": "wyn",
-  "displayName": "Wyn Language Support",
+  "displayName": "Wyn — The Wyvern Language",
   "description": "Syntax highlighting and LSP support for the Wyn programming language",
   "version": "1.7.0",
   "publisher": "wynlang",
