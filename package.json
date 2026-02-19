@@ -19,7 +19,8 @@
           "wyn"
         ],
         "extensions": [
-          ".wyn"
+          ".wyn",
+          ".🐉"
         ],
         "configuration": "./language-configuration.json"
       }
