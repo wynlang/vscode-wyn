@@ -55,7 +55,7 @@
       "name": "support.type.wyn"
     },
     "modules": {
-      "match": "\\b(File|System|Terminal|HashMap|HashSet|Math|Path|DateTime|Json|Regex|Url|Test|Task|Db|Http|Net|Gui|Audio|StringBuilder|Crypto|Encoding|Os|Uuid|Log|Process|Csv)\\b",
+      "match": "\\b(File|System|Terminal|HashMap|HashSet|Math|Path|DateTime|Time|Json|Regex|Url|Test|Task|Db|Http|Net|Gui|Audio|StringBuilder|Crypto|Encoding|Os|Uuid|Log|Process|Csv|Template|Socket|Ws|Args|Base64|Toml|Bcrypt|Random|Web|Smtp|App|Color)\\b",
       "name": "support.class.wyn"
     },
     "constants": {
