@@ -1,4 +1,3 @@
-import * as path from 'path';
 import { workspace, ExtensionContext } from 'vscode';
 import {
     LanguageClient,
@@ -9,8 +8,13 @@ import {
 let client: LanguageClient;
 
 export function activate(context: ExtensionContext) {
+    const config = workspace.getConfiguration('wyn');
+    if (!config.get('lsp.enabled', true)) return;
+
+    const wynPath = config.get<string>('lsp.path', 'wyn');
+
     const serverOptions: ServerOptions = {
-        command: 'wyn',
+        command: wynPath,
         args: ['lsp']
     };
 
@@ -32,8 +36,6 @@ export function activate(context: ExtensionContext) {
 }
 
 export function deactivate(): Thenable<void> | undefined {
-    if (!client) {
-        return undefined;
-    }
+    if (!client) return undefined;
     return client.stop();
 }

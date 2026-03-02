@@ -37,7 +37,7 @@
       "properties": {
         "wyn.lsp.enabled": {
           "type": "boolean",
-          "default": false,
+          "default": true,
           "description": "Enable Wyn Language Server"
         },
         "wyn.lsp.path": {
