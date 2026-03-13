@@ -43,7 +43,7 @@
         { "match": "\\b(fn|var|const|struct|enum|impl|trait|type|pub|import|export|module|defer|test|before_each|after_each)\\b", "name": "keyword.other.wyn" },
         { "match": "\\b(if|else|match)\\b", "name": "keyword.control.conditional.wyn" },
         { "match": "\\b(while|for|in)\\b", "name": "keyword.control.loop.wyn" },
-        { "match": "\\b(return|break|continue|spawn|await)\\b", "name": "keyword.control.flow.wyn" },
+        { "match": "\\b(return|break|continue|spawn|await|await_all|await_any)\\b", "name": "keyword.control.flow.wyn" },
         { "match": "\\b(mut)\\b", "name": "storage.modifier.wyn" },
         { "match": "\\b(true|false)\\b", "name": "constant.language.boolean.wyn" },
         { "match": "\\b(None|Some|Ok|Err)\\b", "name": "constant.language.wyn" },
@@ -55,7 +55,7 @@
       "name": "support.type.wyn"
     },
     "modules": {
-      "match": "\\b(File|System|Terminal|HashMap|HashSet|Math|Path|DateTime|Time|Json|Regex|Url|Test|Task|Db|Http|Net|Gui|Audio|StringBuilder|Crypto|Encoding|Os|Uuid|Log|Process|Csv|Template|Socket|Ws|Args|Base64|Toml|Bcrypt|Random|Web|Smtp|App|Color)\\b",
+      "match": "\\b(File|System|Terminal|HashMap|HashSet|Math|Path|DateTime|Time|Json|Regex|Url|Test|Task|Db|Http|Net|Gui|Audio|StringBuilder|Crypto|Encoding|Os|Uuid|Log|Process|Csv|Template|Socket|Ws|Args|Base64|Toml|Bcrypt|Random|Web|Smtp|App|Color|Shared)\\b",
       "name": "support.class.wyn"
     },
     "constants": {
