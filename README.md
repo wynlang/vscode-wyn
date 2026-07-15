@@ -4,50 +4,56 @@ Syntax highlighting and language server support for [Wyn](https://wynlang.com).
 
 ## Features
 
-- Syntax highlighting for all keywords, 27 modules, operators, string interpolation
-- LSP integration via `wyn lsp` — completions, hover, go-to-definition, references, rename, format
+- **Syntax highlighting** — keywords, built-in modules, types, operators, string interpolation, comments
+- **LSP** via `wyn lsp` — live diagnostics (type-check only, never runs your code), completions, hover, go-to-definition, find references, rename
 - Auto-closing brackets, quotes, string interpolation `${}`
-- Comment toggling (`Ctrl+/`)
-- Code folding
+- Comment toggling (`Ctrl+/`), code folding
+- Filetype detection for `.wyn` and `.🐉`
 
 ## Install
 
-Copy to your extensions directory:
+### From source
+
+```bash
+git clone https://github.com/wynlang/vscode-wyn.git
+cd vscode-wyn
+npm install
+npm run compile
+```
+
+Then symlink (or copy) into your extensions dir and restart VS Code:
 
 ```bash
 # macOS/Linux
-cp -r vscode-wyn ~/.vscode/extensions/wyn
-
+ln -s "$PWD" ~/.vscode/extensions/wyn
 # Windows
-xcopy /E vscode-wyn %USERPROFILE%\.vscode\extensions\wyn
+xcopy /E . %USERPROFILE%\.vscode\extensions\wyn
 ```
 
-Restart VS Code. Open any `.wyn` file.
+Open any `.wyn` file. Syntax highlighting works immediately; the LSP starts
+automatically if `wyn` is on your `PATH` (install with `wyn install`, or set
+`wyn.lsp.path`).
 
 ## LSP
 
-The extension automatically starts `wyn lsp` when you open a `.wyn` file. Make sure `wyn` is in your PATH:
+The extension starts `wyn lsp` when you open a `.wyn` file. It provides:
+- **Diagnostics** — errors/warnings from `wyn check` as you type (type-check only; never runs your program)
+- **Completions** — keywords, modules, and symbols (triggered by `.` / `:`)
+- **Hover** — symbol info
+- **Go to Definition** — jump to function/struct/enum declarations
+- **Find References** / **Rename** — across the open files
 
-```bash
-wyn install    # or add wyn to PATH manually
-```
-
-LSP provides:
-- **Completions** — all keywords, 27 modules with method hints, triggered by `.`
-- **Hover** — type information
-- **Go to Definition** — jump to function/struct definitions
-- **Find References** — find all usages
-- **Rename** — rename symbols across files
-- **Format** — format document
+Settings: `wyn.lsp.enabled` (default `true`), `wyn.lsp.path` (default `"wyn"`).
 
 ## Highlighted
 
 | Category | Tokens |
 |----------|--------|
-| Keywords | `fn var const struct enum impl trait type pub import export module` |
-| Flow | `return break continue spawn await if else match while for in` |
+| Keywords | `fn var const struct enum impl trait type pub import export from as extern` |
+| Flow | `return break continue spawn await await_all parallel select if else match while for in` |
+| Operators | `and or not` |
 | Modifiers | `mut` |
-| Types | `int float string bool void ResultInt OptionInt` |
+| Types | `int float string bool void ptr char Option Result HashMap` |
 | Modules | `File System Terminal HashMap Math Path DateTime Json Regex Csv Http Net Db Task Gui Audio StringBuilder Crypto Encoding Os Uuid Log Process Test Url` |
 | Constants | `true false None Some Ok Err` |
 

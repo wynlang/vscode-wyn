@@ -1,0 +1,28 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  build:
+    name: Compile extension
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Install dependencies
+        run: npm install
+      - name: Type-check / compile
+        run: npm run compile
+      - name: Validate grammar + manifest JSON
+        run: |
+          node -e "JSON.parse(require('fs').readFileSync('syntaxes/wyn.tmLanguage.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('package.json','utf8'))"
+          node -e "JSON.parse(require('fs').readFileSync('language-configuration.json','utf8'))"
+          test -f out/extension.js
+          echo "vscode-wyn: build + JSON OK"
