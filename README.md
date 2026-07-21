@@ -4,8 +4,8 @@ Syntax highlighting and language server support for [Wyn](https://wynlang.com).
 
 ## Features
 
-- **Syntax highlighting** — keywords, built-in modules, types, operators, string interpolation, comments
-- **LSP** via `wyn lsp` — live diagnostics (type-check only, never runs your code), completions, hover, go-to-definition, find references, rename
+- **Syntax highlighting** - keywords, built-in modules, types, operators, string interpolation, comments
+- **LSP** via `wyn lsp` - live diagnostics (type-check only, never runs your code), completions, hover, go-to-definition, find references, rename
 - Auto-closing brackets, quotes, string interpolation `${}`
 - Comment toggling (`Ctrl+/`), code folding
 - Filetype detection for `.wyn` and `.🐉`
@@ -37,11 +37,11 @@ automatically if `wyn` is on your `PATH` (install with `wyn install`, or set
 ## LSP
 
 The extension starts `wyn lsp` when you open a `.wyn` file. It provides:
-- **Diagnostics** — errors/warnings from `wyn check` as you type (type-check only; never runs your program)
-- **Completions** — keywords, modules, and symbols (triggered by `.` / `:`)
-- **Hover** — symbol info
-- **Go to Definition** — jump to function/struct/enum declarations
-- **Find References** / **Rename** — across the open files
+- **Diagnostics** - errors/warnings from `wyn check` as you type (type-check only; never runs your program)
+- **Completions** - keywords, modules, and symbols (triggered by `.` / `:`)
+- **Hover** - symbol info
+- **Go to Definition** - jump to function/struct/enum declarations
+- **Find References** / **Rename** - across the open files
 
 Settings: `wyn.lsp.enabled` (default `true`), `wyn.lsp.path` (default `"wyn"`).
 
