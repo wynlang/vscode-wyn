@@ -2,8 +2,9 @@
   "name": "wyn",
   "displayName": "Wyn — The Wyn Programming Language",
   "description": "Syntax highlighting and LSP support for the Wyn programming language",
-  "version": "1.16.0",
+  "version": "1.16.1",
   "publisher": "wynlang",
+  "license": "MIT",
   "engines": {
     "vscode": "^1.75.0"
   },
